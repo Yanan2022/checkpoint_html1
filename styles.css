@@ -1,0 +1,686 @@
+/* =========================================================
+   FEUILLE DE STYLE DU PORTFOLIO DE YANAN TOURÉ
+   Organisation :
+   1. Variables (couleurs, tailles)
+   2. Styles de base
+   3. Barre de navigation
+   4. En-tête / présentation (hero)
+   5. Sections et titres
+   6. À propos (étiquettes, vidéo)
+   7. Expérience (cartes)
+   8. CV (tableaux)
+   9. Contact (formulaire)
+   10. Boutons
+   11. Pied de page
+   12. Adaptation mobile (responsive)
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+   Les variables CSS (--nom) se déclarent dans :root et
+   s'utilisent avec var(--nom). On change une couleur à un
+   seul endroit pour l'appliquer partout.
+   ========================================================= */
+:root {
+  --bleu-nuit: #0f172a;      /* fond sombre principal */
+  --bleu-ardoise: #1e293b;   /* fond sombre secondaire */
+  --bleu-ciel: #38bdf8;      /* couleur d'accent */
+  --bleu-ciel-fonce: #0284c7;/* accent au survol */
+  --gris-clair: #f1f5f9;     /* fond des sections claires */
+  --gris-texte: #64748b;     /* texte secondaire */
+  --texte: #0f172a;          /* texte principal */
+  --blanc: #ffffff;
+  --rayon: 12px;             /* arrondi des coins */
+  --ombre: 0 10px 30px rgba(15, 23, 42, 0.08); /* ombre douce */
+}
+
+
+/* =========================================================
+   2. STYLES DE BASE
+   ========================================================= */
+
+/* box-sizing: border-box : la largeur d'un élément inclut
+   son padding et sa bordure (calculs plus simples) */
+* {
+  box-sizing: border-box;
+}
+
+/* Défilement fluide lors d'un clic sur un lien #ancre */
+html {
+  scroll-behavior: smooth;
+  /* Décale l'arrivée sur une ancre pour ne pas passer sous la barre fixe */
+  scroll-padding-top: 80px;
+}
+
+/* Police Roboto pour toute la page, avec des polices de secours */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--texte);
+  background-color: var(--blanc);
+}
+
+/* Liens : couleur d'accent, sans soulignement */
+a {
+  color: var(--bleu-ciel-fonce);
+  text-decoration: none;
+}
+
+/* Soulignement au survol */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Abréviations : soulignement en pointillés */
+abbr {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* Conteneur centré à largeur maximale */
+.conteneur {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* =========================================================
+   3. BARRE DE NAVIGATION
+   ========================================================= */
+
+/* La barre reste collée en haut de l'écran pendant le défilement */
+.barre-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;               /* au-dessus du reste du contenu */
+  display: flex;              /* logo et menu sur une même ligne */
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(6px); /* léger flou derrière la barre */
+}
+
+/* Logo texte */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blanc);
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+/* Point coloré du logo */
+.logo-point {
+  color: var(--bleu-ciel);
+}
+
+/* Liste du menu : on retire les puces et les marges par défaut */
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* CONSIGNE 3 : les éléments de la liste s'affichent EN LIGNE
+   (côte à côte) au lieu d'être empilés les uns sous les autres */
+.menu-item {
+  display: inline-block;
+  margin-left: 24px;
+}
+
+/* Liens du menu */
+.menu-lien {
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;     /* changement de couleur progressif */
+}
+
+.menu-lien:hover {
+  color: var(--bleu-ciel);
+  text-decoration: none;
+}
+
+/* Le lien "Contact" est mis en avant comme un bouton */
+.bouton-nav {
+  padding: 8px 18px;
+  border: 2px solid var(--bleu-ciel);
+  border-radius: 999px;       /* forme de pilule */
+  color: var(--bleu-ciel);
+}
+
+.bouton-nav:hover {
+  background-color: var(--bleu-ciel);
+  color: var(--bleu-nuit);
+}
+
+
+/* =========================================================
+   4. EN-TÊTE / PRÉSENTATION (HERO)
+   ========================================================= */
+
+/* Fond sombre avec un dégradé */
+.entete {
+  background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--bleu-ardoise) 100%);
+  color: var(--blanc);
+}
+
+/* Zone de présentation centrée */
+.hero {
+  text-align: center;
+  padding: 80px 24px 100px;
+}
+
+/* Avatar rond avec un halo coloré */
+.hero-avatar {
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(56, 189, 248, 0.15);
+}
+
+.hero-salut {
+  margin: 24px 0 0;
+  color: var(--bleu-ciel);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-titre {
+  margin: 8px 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero-sous-titre {
+  margin: 0 auto 32px;
+  max-width: 600px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #cbd5e1;
+}
+
+/* Espace entre les deux boutons */
+.hero-actions .bouton {
+  margin: 6px;
+}
+
+
+/* =========================================================
+   5. SECTIONS ET TITRES
+   ========================================================= */
+
+/* Espacement vertical de chaque section */
+.section {
+  padding: 80px 0;
+}
+
+/* Sections à fond gris clair (une sur deux) */
+.section-claire {
+  background-color: var(--gris-clair);
+}
+
+/* Titre de section avec un trait coloré dessous */
+.section-titre {
+  margin: 0 0 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* ::after crée un élément décoratif après le titre */
+.section-titre::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background-color: var(--bleu-ciel);
+}
+
+.sous-titre {
+  margin: 28px 0 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.intro {
+  margin: -20px 0 32px;
+  color: var(--gris-texte);
+}
+
+/* Grille de deux colonnes de même largeur */
+.grille-deux {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+
+/* =========================================================
+   6. À PROPOS : ÉTIQUETTES ET VIDÉO
+   ========================================================= */
+
+/* Liste affichée en "étiquettes" sur une ou plusieurs lignes */
+.liste-etiquettes {
+  display: flex;
+  flex-wrap: wrap;            /* passe à la ligne si nécessaire */
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etiquette {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: #e0f2fe;
+  color: #075985;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Cadre de la vidéo */
+.video-cadre {
+  margin: 0;
+}
+
+/* La vidéo prend toute la largeur de sa colonne */
+.video {
+  width: 100%;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+.legende {
+  margin-top: 8px;
+  color: var(--gris-texte);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+/* =========================================================
+   7. EXPÉRIENCE : CARTES
+   ========================================================= */
+
+/* Grille automatique : autant de cartes que la largeur le permet
+   (chaque carte fait au moins 280px) */
+.grille-cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Carte blanche, arrondie, avec une ombre */
+.carte {
+  position: relative;
+  padding: 28px;
+  border-top: 4px solid var(--bleu-ciel);
+  border-radius: var(--rayon);
+  background-color: var(--blanc);
+  box-shadow: var(--ombre);
+  transition: transform 0.2s;
+}
+
+/* La carte se soulève légèrement au survol */
+.carte:hover {
+  transform: translateY(-4px);
+}
+
+/* Badge positionné en haut à droite de la carte */
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background-color: var(--bleu-nuit);
+  color: var(--blanc);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.carte-titre {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.carte-entreprise {
+  margin: 0;
+  color: var(--bleu-ciel-fonce);
+  font-weight: 500;
+}
+
+.carte-date {
+  margin: 4px 0 16px;
+  color: var(--gris-texte);
+  font-size: 0.9rem;
+}
+
+.carte-liste {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.carte-liste li {
+  margin-bottom: 6px;
+}
+
+/* Bloc dépliable */
+.details-titre {
+  cursor: pointer;
+  color: var(--bleu-ciel-fonce);
+  font-weight: 500;
+}
+
+.projets dt {
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.projets dd {
+  margin: 2px 0 0;
+  color: var(--gris-texte);
+}
+
+
+/* =========================================================
+   8. CV : TABLEAUX
+   ========================================================= */
+
+.tableau {
+  width: 100%;
+  border-collapse: collapse;  /* fusionne les bordures des cellules */
+  border-radius: var(--rayon);
+  overflow: hidden;           /* applique l'arrondi aux coins */
+  box-shadow: var(--ombre);
+}
+
+.tableau-titre {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* En-têtes de colonnes : fond sombre */
+.tableau thead th {
+  background-color: var(--bleu-nuit);
+  color: var(--blanc);
+  font-weight: 500;
+}
+
+.tableau th,
+.tableau td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+/* En-têtes de lignes */
+.tableau tbody th {
+  color: var(--bleu-ciel-fonce);
+  font-weight: 500;
+}
+
+/* Une ligne sur deux en gris (effet "zébré") */
+.tableau tbody tr:nth-child(even) {
+  background-color: var(--gris-clair);
+}
+
+
+/* =========================================================
+   9. CONTACT : FORMULAIRE
+   ========================================================= */
+
+/* Formulaire large à gauche, coordonnées à droite */
+.grille-contact {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.formulaire {
+  padding: 32px;
+  border-radius: var(--rayon);
+  background-color: var(--blanc);
+  box-shadow: var(--ombre);
+}
+
+/* Groupe de champs sans la bordure par défaut */
+.groupe {
+  margin: 0 0 20px;
+  padding: 0;
+  border: none;
+}
+
+.groupe-titre {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Les labels s'affichent au-dessus des champs */
+.etiquette-champ {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Champs de saisie */
+.champ {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;       /* reprend la police Roboto */
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Champ actif : bordure et halo de couleur */
+.champ:focus {
+  outline: none;
+  border-color: var(--bleu-ciel);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Boutons radio et case à cocher alignés en ligne */
+.choix {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+
+.choix label {
+  margin-right: 8px;
+}
+
+/* Couleur d'accent des radios et cases à cocher */
+.choix input {
+  accent-color: var(--bleu-ciel-fonce);
+}
+
+.formulaire-actions .bouton {
+  margin-right: 10px;
+}
+
+/* Carte des coordonnées */
+.carte-contact {
+  background-color: var(--bleu-nuit);
+  color: var(--blanc);
+}
+
+.carte-contact .carte-titre {
+  color: var(--blanc);
+}
+
+.adresse {
+  font-style: normal;         /* <address> est en italique par défaut */
+}
+
+.adresse-label {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.adresse a {
+  color: var(--bleu-ciel);
+}
+
+
+/* =========================================================
+   10. BOUTONS
+   ========================================================= */
+
+/* Style commun à tous les boutons */
+.bouton {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.bouton:hover {
+  text-decoration: none;
+}
+
+/* Bouton plein (bleu) */
+.bouton-plein {
+  background-color: var(--bleu-ciel);
+  color: var(--bleu-nuit);
+}
+
+.bouton-plein:hover {
+  background-color: var(--bleu-ciel-fonce);
+  color: var(--blanc);
+}
+
+/* Bouton avec contour seulement */
+.bouton-contour {
+  border-color: var(--bleu-ciel);
+  color: var(--bleu-ciel);
+}
+
+.bouton-contour:hover {
+  background-color: var(--bleu-ciel);
+  color: var(--bleu-nuit);
+}
+
+/* Bouton gris (effacer) */
+.bouton-gris {
+  background-color: #e2e8f0;
+  color: var(--texte);
+}
+
+.bouton-gris:hover {
+  background-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   11. PIED DE PAGE
+   ========================================================= */
+
+.pied {
+  position: relative;
+  padding: 48px 0 32px;
+  background-color: var(--bleu-nuit);
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Liens du pied de page affichés en ligne */
+.pied-menu {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.pied-menu li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+.pied-menu a {
+  color: #cbd5e1;
+}
+
+.pied-menu a:hover {
+  color: var(--bleu-ciel);
+}
+
+/* Bouton rond "retour en haut" */
+.retour-haut {
+  position: absolute;
+  top: -24px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--bleu-ciel);
+  color: var(--bleu-nuit);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  box-shadow: var(--ombre);
+}
+
+.retour-haut:hover {
+  text-decoration: none;
+  background-color: var(--blanc);
+}
+
+
+/* =========================================================
+   12. ADAPTATION MOBILE (RESPONSIVE)
+   Ces règles ne s'appliquent que si l'écran fait
+   900px de large ou moins.
+   ========================================================= */
+@media (max-width: 900px) {
+
+  /* Logo au-dessus du menu, le tout centré */
+  .barre-nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .menu {
+    text-align: center;
+  }
+
+  .menu-item {
+    margin: 4px 8px;
+  }
+
+  .hero-titre {
+    font-size: 2.4rem;
+  }
+
+  /* Les grilles passent sur une seule colonne */
+  .grille-deux,
+  .grille-contact {
+    grid-template-columns: 1fr;
+  }
+}

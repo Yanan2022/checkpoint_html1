@@ -4,406 +4,415 @@
 <!-- Attribut lang="fr" : indique au navigateur et aux lecteurs d'écran que la page est en français -->
 
 <head>
-    <!-- Encodage des caractères : permet d'afficher correctement les accents (é, è, à, ç...) -->
-    <meta charset="UTF-8">
-    <!-- Adapte l'affichage à la largeur de l'écran (mobile, tablette, ordinateur) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Description de la page, utilisée par les moteurs de recherche -->
-    <meta name="description" content="Portfolio de Yanan Touré, développeur Full Stack et formateur à Abidjan.">
-    <!-- Nom de l'auteur de la page -->
-    <meta name="author" content="Yanan Touré">
-    <!-- Titre affiché dans l'onglet du navigateur -->
-    <title>Yanan Touré | Portfolio</title>
+  <!-- Encodage des caractères : permet d'afficher correctement les accents (é, è, à, ç...) -->
+  <meta charset="UTF-8">
+  <!-- Adapte l'affichage à la largeur de l'écran (mobile, tablette, ordinateur) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Description de la page, utilisée par les moteurs de recherche -->
+  <meta name="description" content="Portfolio de Yanan Touré, développeur Full Stack et formateur à Abidjan.">
+  <!-- Nom de l'auteur de la page -->
+  <meta name="author" content="Yanan Touré">
+  <!-- Titre affiché dans l'onglet du navigateur -->
+  <title>Yanan Touré | Portfolio</title>
+
+  <!-- ===================================================== -->
+  <!-- POLICE ROBOTO (Google Fonts)                           -->
+  <!-- preconnect : prépare la connexion pour charger plus vite -->
+  <!-- ===================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Chargement de Roboto en graisses 300 (fin), 400 (normal), 500 et 700 (gras) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ===================================================== -->
+  <!-- FEUILLE DE STYLE DU PROJET                             -->
+  <!-- Lien vers le fichier styles.css placé à côté de index.html -->
+  <!-- ===================================================== -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- ===================================================== -->
-    <!-- EN-TÊTE DE LA PAGE (balise sémantique <header>)        -->
-    <!-- Contient l'identité du site et la barre de navigation  -->
-    <!-- ===================================================== -->
-    <header id="accueil">
+  <!-- ===================================================== -->
+  <!-- EN-TÊTE DE LA PAGE (balise sémantique <header>)        -->
+  <!-- Contient la barre de navigation et la présentation     -->
+  <!-- ===================================================== -->
+  <header id="accueil" class="entete">
 
-        <!-- Logo / avatar : image locale au format SVG -->
-        <img src="images/avatar.svg" alt="Avatar aux initiales YT de Yanan Touré" width="100" height="100">
+    <!-- ================================================= -->
+    <!-- BARRE DE NAVIGATION (balise sémantique <nav>)      -->
+    <!-- La classe "barre-nav" la fixe en haut de l'écran   -->
+    <!-- ================================================= -->
+    <nav class="barre-nav" aria-label="Navigation principale">
+      <!-- Logo texte : lien vers le haut de la page -->
+      <a href="#accueil" class="logo">Yanan<span class="logo-point">.</span></a>
 
-        <!-- Titre principal de la page : un seul <h1> par page -->
-        <h1>Yanan Touré</h1>
+      <!-- Liste des liens : affichée EN LIGNE grâce au CSS (display: inline-block) -->
+      <ul class="menu">
+        <li class="menu-item"><a href="#accueil" class="menu-lien">Accueil</a></li>
+        <li class="menu-item"><a href="#a-propos" class="menu-lien">À propos</a></li>
+        <li class="menu-item"><a href="#experience" class="menu-lien">Expérience professionnelle</a></li>
+        <li class="menu-item"><a href="#cv" class="menu-lien">CV</a></li>
+        <li class="menu-item"><a href="#contact" class="menu-lien bouton-nav">Contact</a></li>
+      </ul>
+    </nav>
 
-        <!-- Sous-titre : le métier -->
-        <p><strong>Développeur Full Stack</strong> &amp; <em>Formateur</em>, basé à Abidjan, Côte d'Ivoire</p>
+    <!-- ================================================= -->
+    <!-- ZONE DE PRÉSENTATION ("hero")                      -->
+    <!-- ================================================= -->
+    <div class="hero">
+      <!-- Avatar : image locale au format SVG -->
+      <img src="images/avatar.svg" alt="Avatar aux initiales YT de Yanan Touré" class="hero-avatar" width="140" height="140">
 
-        <!-- ================================================= -->
-        <!-- BARRE DE NAVIGATION (balise sémantique <nav>)      -->
-        <!-- Liste non ordonnée de liens locaux (ancres #id)    -->
-        <!-- Chaque lien mène à la section ayant le même id     -->
-        <!-- ================================================= -->
-        <nav aria-label="Navigation principale">
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#experience">Expérience professionnelle</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <!-- Petit texte au-dessus du titre -->
+      <p class="hero-salut">Bonjour, je suis</p>
 
-    </header>
+      <!-- Titre principal de la page : un seul <h1> par page -->
+      <h1 class="hero-titre">Yanan Touré</h1>
 
-    <!-- Ligne horizontale de séparation visuelle -->
-    <hr>
+      <!-- Sous-titre : le métier -->
+      <p class="hero-sous-titre">
+        <strong>Développeur Full Stack</strong> &amp; <em>Formateur</em>, basé à Abidjan, Côte d'Ivoire
+      </p>
 
-    <!-- ===================================================== -->
-    <!-- CONTENU PRINCIPAL (balise sémantique <main>)           -->
-    <!-- Une seule balise <main> par page                       -->
-    <!-- ===================================================== -->
-    <main>
+      <!-- Boutons d'action : liens locaux vers les sections -->
+      <p class="hero-actions">
+        <a href="#experience" class="bouton bouton-plein">Voir mon parcours</a>
+        <a href="#contact" class="bouton bouton-contour">Me contacter</a>
+      </p>
+    </div>
 
-        <!-- ================================================= -->
-        <!-- SECTION 1 : À PROPOS                               -->
-        <!-- ================================================= -->
-        <section id="a-propos">
+  </header>
 
-            <!-- Titre de la section -->
-            <h2>À propos</h2>
+  <!-- ===================================================== -->
+  <!-- CONTENU PRINCIPAL (balise sémantique <main>)           -->
+  <!-- ===================================================== -->
+  <main>
 
-            <!-- Paragraphes de présentation -->
+    <!-- ================================================= -->
+    <!-- SECTION 1 : À PROPOS                               -->
+    <!-- ================================================= -->
+    <section id="a-propos" class="section">
+      <div class="conteneur">
+
+        <!-- Titre de la section -->
+        <h2 class="section-titre">À propos</h2>
+
+        <!-- Grille en deux colonnes : texte à gauche, vidéo à droite -->
+        <div class="grille-deux">
+
+          <!-- Colonne de gauche : texte -->
+          <div class="a-propos-texte">
             <p>
-                Je suis <strong>ingénieur en génie logiciel</strong>, titulaire d'un
-                <abbr title="Master en Systèmes d'Information et Génie Logiciel">Master SIGL</abbr>
-                obtenu à l'<abbr
-                    title="École Supérieure Africaine des Technologies de l'Information et de la Communication">ESATIC</abbr>.
+              Je suis <strong>ingénieur en génie logiciel</strong>, titulaire d'un
+              <abbr title="Master en Systèmes d'Information et Génie Logiciel">Master SIGL</abbr>
+              obtenu à l'<abbr title="École Supérieure Africaine des Technologies de l'Information et de la Communication">ESATIC</abbr>.
             </p>
             <p>
-                Je conçois des applications web et mobiles complètes, du back-end au front-end,
-                et je partage mes connaissances en tant que formateur. J'aime créer des solutions
-                utiles pour le marché ivoirien : mobilité, livraison et assurance.
+              Je conçois des applications web et mobiles complètes, du back-end au front-end,
+              et je partage mes connaissances en tant que formateur. J'aime créer des solutions
+              utiles pour le marché ivoirien : mobilité, livraison et assurance.
             </p>
 
-            <!-- ============================================== -->
-            <!-- VIDÉO DE PRÉSENTATION                           -->
-            <!-- <figure> regroupe un média et sa légende        -->
-            <!-- ============================================== -->
-            <figure>
-                <!-- Balise <video> :                                          -->
-                <!--  - controls : affiche les boutons lecture/pause/volume      -->
-                <!--  - poster   : image affichée avant le lancement de la vidéo -->
-                <!--  - width    : largeur d'affichage en pixels                 -->
-                <!--  - muted    : vidéo sans son                                -->
-                <video controls muted width="480" poster="media/poster.jpg">
-                    <!-- Fichier vidéo local, au format MP4 -->
-                    <source src="media/presentation.mp4" type="video/mp4">
-                    <!-- Texte affiché si le navigateur ne lit pas la vidéo -->
-                    Votre navigateur ne prend pas en charge la lecture de vidéos.
-                </video>
-                <!-- Légende de la vidéo -->
-                <figcaption>Vidéo de présentation (8 secondes)</figcaption>
-            </figure>
-
-            <!-- ============================================== -->
-            <!-- CE QUE JE FAIS : liste non ordonnée <ul>        -->
-            <!-- ============================================== -->
-            <h3>Ce que je fais</h3>
-            <ul>
-                <li>Développement d'applications web (front-end et back-end)</li>
-                <li>Développement d'applications mobiles</li>
-                <li>Intégration de l'intelligence artificielle (IA générative, RAG)</li>
-                <li>Gestion d'incidents sur des systèmes d'information</li>
-                <li>Formation en développement web, Python, data science et IA</li>
+            <!-- Liste des activités, affichée sous forme d'étiquettes -->
+            <h3 class="sous-titre">Ce que je fais</h3>
+            <ul class="liste-etiquettes">
+              <li class="etiquette">Applications web</li>
+              <li class="etiquette">Applications mobiles</li>
+              <li class="etiquette">IA générative &amp; RAG</li>
+              <li class="etiquette">Gestion d'incidents SI</li>
+              <li class="etiquette">Formation</li>
             </ul>
+          </div>
 
-            <!-- Lien local pour remonter en haut de la page -->
-            <p><a href="#accueil">↑ Retour en haut</a></p>
-        </section>
+          <!-- Colonne de droite : vidéo de présentation -->
+          <!-- <figure> regroupe un média et sa légende -->
+          <figure class="video-cadre">
+            <!-- controls : boutons lecture/pause ; poster : image avant lecture ; muted : sans son -->
+            <video controls muted class="video" poster="media/poster.jpg">
+              <!-- Fichier vidéo local au format MP4 -->
+              <source src="media/presentation.mp4" type="video/mp4">
+              <!-- Texte affiché si le navigateur ne lit pas la vidéo -->
+              Votre navigateur ne prend pas en charge la lecture de vidéos.
+            </video>
+            <!-- Légende de la vidéo -->
+            <figcaption class="legende">Vidéo de présentation (8 secondes)</figcaption>
+          </figure>
 
-        <hr>
+        </div>
+      </div>
+    </section>
 
-        <!-- ================================================= -->
-        <!-- SECTION 2 : EXPÉRIENCE PROFESSIONNELLE             -->
-        <!-- Chaque expérience est un <article> indépendant     -->
-        <!-- ================================================= -->
-        <section id="experience">
+    <!-- ================================================= -->
+    <!-- SECTION 2 : EXPÉRIENCE PROFESSIONNELLE             -->
+    <!-- Chaque expérience est un <article> affiché en carte -->
+    <!-- ================================================= -->
+    <section id="experience" class="section section-claire">
+      <div class="conteneur">
 
-            <h2>Expérience professionnelle</h2>
+        <h2 class="section-titre">Expérience professionnelle</h2>
 
-            <!-- ---------- Expérience 1 ---------- -->
-            <article>
-                <h3>Développeur Full Stack | REVIVA TECHNOLOGIES</h3>
-                <!-- <time> : balise sémantique pour les dates (attribut datetime lisible par les machines) -->
-                <p><time datetime="2025-10">Octobre 2025</time> à aujourd'hui · Abidjan</p>
-                <!-- Liste des missions -->
-                <ul>
-                    <li>Mission chez <strong>GS2E</strong> : gestion des incidents des systèmes d'information de la CIE
-                        et de la SODECI</li>
-                    <li>Support et analyse dans l'environnement <strong>SAP / Saphir V3</strong></li>
-                    <li>Participation à l'initiative <em>GenAI Factory</em></li>
-                </ul>
-            </article>
+        <!-- Grille de cartes -->
+        <div class="grille-cartes">
 
-            <!-- ---------- Expérience 2 ---------- -->
-            <article>
-                <h3>Formateur (temps partiel) | GOMYCODE Abidjan</h3>
-                <p>En cours · Abidjan</p>
-                <!-- Liste ordonnée <ol> : les modules enseignés -->
-                <ol>
-                    <li>Développement web</li>
-                    <li>Python</li>
-                    <li>Data science</li>
-                    <li>IA générative</li>
-                    <li>Cybersécurité</li>
-                    <li>Deep learning / NLP</li>
-                </ol>
-            </article>
-
-            <!-- ---------- Expérience 3 ---------- -->
-            <article>
-                <h3>Entrepreneur | Projets personnels</h3>
-                <p>Applications pour le marché ivoirien</p>
-
-                <!-- <details> / <summary> : bloc que l'on peut ouvrir et fermer, sans JavaScript -->
-                <details>
-                    <summary>Voir mes projets</summary>
-                    <!-- Liste de description <dl> : terme <dt> + description <dd> -->
-                    <dl>
-                        <dt>TIGOON CONNECT</dt>
-                        <dd>Plateforme de livraison et de VTC, avec un module de livraison à moto.</dd>
-
-                        <dt>IRO</dt>
-                        <dd>Application mobile de location de véhicules à Abidjan.</dd>
-
-                        <dt>Cap Assurance</dt>
-                        <dd>Plateforme de gestion et chatbot pour l'assurance.</dd>
-                    </dl>
-                </details>
-            </article>
-
-            <p><a href="#accueil">↑ Retour en haut</a></p>
-        </section>
-
-        <hr>
-
-        <!-- ================================================= -->
-        <!-- SECTION 3 : CV                                     -->
-        <!-- Utilisation de tableaux <table> et de listes       -->
-        <!-- ================================================= -->
-        <section id="cv">
-
-            <h2>CV</h2>
-
-            <!-- ============================================== -->
-            <!-- TABLEAU 1 : FORMATION                           -->
-            <!-- ============================================== -->
-            <!-- border="1" : affiche les bordures du tableau (attribut HTML simple) -->
-            <table border="1">
-                <!-- <caption> : titre du tableau -->
-                <caption>Formation</caption>
-                <!-- <thead> : ligne d'en-tête -->
-                <thead>
-                    <tr>
-                        <!-- <th> : cellule d'en-tête ; scope="col" indique qu'elle décrit une colonne -->
-                        <th scope="col">Diplôme</th>
-                        <th scope="col">Établissement</th>
-                        <th scope="col">Spécialité</th>
-                    </tr>
-                </thead>
-                <!-- <tbody> : corps du tableau, avec les données -->
-                <tbody>
-                    <tr>
-                        <td>Master</td>
-                        <td>ESATIC</td>
-                        <td>Systèmes d'Information et Génie Logiciel</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-            <!-- ============================================== -->
-            <!-- TABLEAU 2 : COMPÉTENCES TECHNIQUES               -->
-            <!-- ============================================== -->
-            <table border="1">
-                <caption>Compétences techniques</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Domaine</th>
-                        <th scope="col">Technologies</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <!-- scope="row" : cette cellule d'en-tête décrit la ligne -->
-                        <th scope="row">Front-end</th>
-                        <td>HTML, CSS, JavaScript, React</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Back-end</th>
-                        <td>Node.js, Python, FastAPI</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Intelligence artificielle</th>
-                        <td>IA générative, RAG, Ollama, NLP</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Outils</th>
-                        <td>Git, GitHub, VS Code, SAP</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- ============================================== -->
-            <!-- LANGUES : liste non ordonnée                    -->
-            <!-- ============================================== -->
-            <h3>Langues</h3>
-            <ul>
-                <li>Français : langue principale</li>
-                <li>Anglais : technique</li>
+          <!-- ---------- Expérience 1 ---------- -->
+          <article class="carte">
+            <!-- Badge "En poste" -->
+            <span class="badge">En poste</span>
+            <h3 class="carte-titre">Développeur Full Stack</h3>
+            <p class="carte-entreprise">REVIVA TECHNOLOGIES</p>
+            <!-- <time> : balise sémantique pour les dates -->
+            <p class="carte-date"><time datetime="2025-10">Octobre 2025</time> à aujourd'hui · Abidjan</p>
+            <ul class="carte-liste">
+              <li>Mission chez <strong>GS2E</strong> : gestion des incidents des SI de la CIE et de la SODECI</li>
+              <li>Support et analyse dans l'environnement <strong>SAP / Saphir V3</strong></li>
+              <li>Participation à l'initiative <em>GenAI Factory</em></li>
             </ul>
+          </article>
 
-            <p><a href="#accueil">↑ Retour en haut</a></p>
-        </section>
+          <!-- ---------- Expérience 2 ---------- -->
+          <article class="carte">
+            <span class="badge">Temps partiel</span>
+            <h3 class="carte-titre">Formateur</h3>
+            <p class="carte-entreprise">GOMYCODE Abidjan</p>
+            <p class="carte-date">En cours · Abidjan</p>
+            <!-- Liste ordonnée <ol> : les modules enseignés -->
+            <ol class="carte-liste">
+              <li>Développement web</li>
+              <li>Python</li>
+              <li>Data science</li>
+              <li>IA générative</li>
+              <li>Cybersécurité</li>
+              <li>Deep learning / NLP</li>
+            </ol>
+          </article>
 
-        <hr>
+          <!-- ---------- Expérience 3 ---------- -->
+          <article class="carte">
+            <span class="badge">Projets</span>
+            <h3 class="carte-titre">Entrepreneur</h3>
+            <p class="carte-entreprise">Projets personnels</p>
+            <p class="carte-date">Applications pour le marché ivoirien</p>
 
-        <!-- ================================================= -->
-        <!-- SECTION 4 : CONTACT (formulaire HTML)              -->
-        <!-- ================================================= -->
-        <section id="contact">
+            <!-- <details> / <summary> : bloc qui s'ouvre et se ferme, sans JavaScript -->
+            <details class="details">
+              <summary class="details-titre">Voir mes projets</summary>
+              <!-- Liste de description <dl> : terme <dt> + description <dd> -->
+              <dl class="projets">
+                <dt>TIGOON CONNECT</dt>
+                <dd>Plateforme de livraison et de VTC, avec un module de livraison à moto.</dd>
 
-            <h2>Contact</h2>
-            <p>Un projet, une formation ou une question ? Écrivez-moi grâce au formulaire ci-dessous.</p>
+                <dt>IRO</dt>
+                <dd>Application mobile de location de véhicules à Abidjan.</dd>
 
-            <!-- Balise <form> :                                                        -->
-            <!--  - action : adresse où les données seraient envoyées (# = cette page)    -->
-            <!--  - method="post" : les données ne s'affichent pas dans l'URL             -->
-            <form action="#" method="post">
+                <dt>Cap Assurance</dt>
+                <dd>Plateforme de gestion et chatbot pour l'assurance.</dd>
+              </dl>
+            </details>
+          </article>
 
-                <!-- <fieldset> regroupe des champs liés ; <legend> donne le titre du groupe -->
-                <fieldset>
-                    <legend>Vos coordonnées</legend>
+        </div>
+      </div>
+    </section>
 
-                    <!-- Le "for" du label correspond à l'"id" du champ : cliquer sur le texte active le champ -->
-                    <p>
-                        <label for="nom">Nom complet :</label><br>
-                        <!-- required : champ obligatoire -->
-                        <input type="text" id="nom" name="nom" placeholder="Ex. : Awa Koné" required>
-                    </p>
+    <!-- ================================================= -->
+    <!-- SECTION 3 : CV                                     -->
+    <!-- ================================================= -->
+    <section id="cv" class="section">
+      <div class="conteneur">
 
-                    <p>
-                        <label for="email">Adresse e-mail :</label><br>
-                        <!-- type="email" : le navigateur vérifie le format de l'adresse -->
-                        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
-                    </p>
+        <h2 class="section-titre">CV</h2>
 
-                    <p>
-                        <label for="telephone">Téléphone (facultatif) :</label><br>
-                        <!-- type="tel" : affiche le clavier numérique sur mobile -->
-                        <input type="tel" id="telephone" name="telephone" placeholder="07 00 00 00 00">
-                    </p>
-                </fieldset>
+        <div class="grille-deux">
 
-                <fieldset>
-                    <legend>Votre demande</legend>
+          <!-- TABLEAU 1 : FORMATION -->
+          <table class="tableau">
+            <!-- <caption> : titre du tableau -->
+            <caption class="tableau-titre">Formation</caption>
+            <thead>
+              <tr>
+                <!-- scope="col" : cette cellule décrit une colonne -->
+                <th scope="col">Diplôme</th>
+                <th scope="col">Établissement</th>
+                <th scope="col">Spécialité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Master</td>
+                <td>ESATIC</td>
+                <td>Systèmes d'Information et Génie Logiciel</td>
+              </tr>
+            </tbody>
+          </table>
 
-                    <!-- Boutons radio : un seul choix possible car ils partagent le même "name" -->
-                    <p>Type de demande :</p>
-                    <p>
-                        <input type="radio" id="projet" name="type" value="projet" checked>
-                        <label for="projet">Projet de développement</label><br>
+          <!-- TABLEAU 2 : COMPÉTENCES TECHNIQUES -->
+          <table class="tableau">
+            <caption class="tableau-titre">Compétences techniques</caption>
+            <thead>
+              <tr>
+                <th scope="col">Domaine</th>
+                <th scope="col">Technologies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- scope="row" : cette cellule décrit la ligne -->
+                <th scope="row">Front-end</th>
+                <td>HTML, CSS, JavaScript, React</td>
+              </tr>
+              <tr>
+                <th scope="row">Back-end</th>
+                <td>Node.js, Python, FastAPI</td>
+              </tr>
+              <tr>
+                <th scope="row">Intelligence artificielle</th>
+                <td>IA générative, RAG, Ollama, NLP</td>
+              </tr>
+              <tr>
+                <th scope="row">Outils</th>
+                <td>Git, GitHub, VS Code, SAP</td>
+              </tr>
+            </tbody>
+          </table>
 
-                        <input type="radio" id="formation" name="type" value="formation">
-                        <label for="formation">Formation</label><br>
+        </div>
 
-                        <input type="radio" id="autre" name="type" value="autre">
-                        <label for="autre">Autre</label>
-                    </p>
+        <!-- LANGUES -->
+        <h3 class="sous-titre">Langues</h3>
+        <ul class="liste-etiquettes">
+          <li class="etiquette">Français : langue principale</li>
+          <li class="etiquette">Anglais : technique</li>
+        </ul>
 
-                    <!-- Liste déroulante <select> avec ses options -->
-                    <p>
-                        <label for="budget">Budget estimé :</label><br>
-                        <select id="budget" name="budget">
-                            <option value="">-- Choisir --</option>
-                            <option value="petit">Moins de 500 000 FCFA</option>
-                            <option value="moyen">500 000 à 2 000 000 FCFA</option>
-                            <option value="grand">Plus de 2 000 000 FCFA</option>
-                        </select>
-                    </p>
+      </div>
+    </section>
 
-                    <!-- Champ de date -->
-                    <p>
-                        <label for="date">Date de début souhaitée :</label><br>
-                        <input type="date" id="date" name="date">
-                    </p>
+    <!-- ================================================= -->
+    <!-- SECTION 4 : CONTACT (formulaire HTML)              -->
+    <!-- ================================================= -->
+    <section id="contact" class="section section-claire">
+      <div class="conteneur">
 
-                    <!-- Zone de texte sur plusieurs lignes -->
-                    <p>
-                        <label for="message">Message :</label><br>
-                        <textarea id="message" name="message" rows="6" cols="40" placeholder="Décrivez votre besoin..."
-                            required></textarea>
-                    </p>
+        <h2 class="section-titre">Contact</h2>
+        <p class="intro">Un projet, une formation ou une question ? Écrivez-moi grâce au formulaire ci-dessous.</p>
 
-                    <!-- Case à cocher -->
-                    <p>
-                        <input type="checkbox" id="copie" name="copie" value="oui">
-                        <label for="copie">Recevoir une copie de mon message</label>
-                    </p>
-                </fieldset>
+        <div class="grille-contact">
 
-                <!-- Boutons du formulaire -->
-                <p>
-                    <!-- submit : envoie le formulaire -->
-                    <button type="submit">Envoyer</button>
-                    <!-- reset : efface tous les champs -->
-                    <button type="reset">Effacer</button>
-                </p>
+          <!-- action="#" : reste sur la page ; method="post" : données non visibles dans l'URL -->
+          <form action="#" method="post" class="formulaire">
 
-            </form>
+            <!-- <fieldset> regroupe des champs liés ; <legend> donne le titre du groupe -->
+            <fieldset class="groupe">
+              <legend class="groupe-titre">Vos coordonnées</legend>
 
-            <!-- ============================================== -->
-            <!-- COORDONNÉES DIRECTES                            -->
-            <!-- <address> : balise sémantique pour les contacts -->
-            <!-- ============================================== -->
-            <h3>Ou contactez-moi directement</h3>
-            <address>
-                <!-- mailto: ouvre la messagerie de l'utilisateur -->
-                E-mail : <a href="mailto:yanan3504toure@gmail.com">yanan3504toure@gmail.com</a><br>
-                <!-- tel: lance un appel sur mobile -->
-                Téléphone / WhatsApp : <a href="tel:+2250747247147">07 47 24 71 47</a><br>
-                Abidjan, Côte d'Ivoire
+              <!-- "for" du label = "id" du champ : cliquer sur le texte active le champ -->
+              <label for="nom" class="etiquette-champ">Nom complet</label>
+              <input type="text" id="nom" name="nom" class="champ" placeholder="Ex. : Awa Koné" required>
+
+              <label for="email" class="etiquette-champ">Adresse e-mail</label>
+              <!-- type="email" : le navigateur vérifie le format -->
+              <input type="email" id="email" name="email" class="champ" placeholder="exemple@mail.com" required>
+
+              <label for="telephone" class="etiquette-champ">Téléphone (facultatif)</label>
+              <input type="tel" id="telephone" name="telephone" class="champ" placeholder="07 00 00 00 00">
+            </fieldset>
+
+            <fieldset class="groupe">
+              <legend class="groupe-titre">Votre demande</legend>
+
+              <!-- Boutons radio : un seul choix possible (même "name") -->
+              <p class="etiquette-champ">Type de demande</p>
+              <div class="choix">
+                <input type="radio" id="projet" name="type" value="projet" checked>
+                <label for="projet">Projet</label>
+
+                <input type="radio" id="formation" name="type" value="formation">
+                <label for="formation">Formation</label>
+
+                <input type="radio" id="autre" name="type" value="autre">
+                <label for="autre">Autre</label>
+              </div>
+
+              <!-- Liste déroulante -->
+              <label for="budget" class="etiquette-champ">Budget estimé</label>
+              <select id="budget" name="budget" class="champ">
+                <option value="">-- Choisir --</option>
+                <option value="petit">Moins de 500 000 FCFA</option>
+                <option value="moyen">500 000 à 2 000 000 FCFA</option>
+                <option value="grand">Plus de 2 000 000 FCFA</option>
+              </select>
+
+              <!-- Champ de date -->
+              <label for="date" class="etiquette-champ">Date de début souhaitée</label>
+              <input type="date" id="date" name="date" class="champ">
+
+              <!-- Zone de texte sur plusieurs lignes -->
+              <label for="message" class="etiquette-champ">Message</label>
+              <textarea id="message" name="message" rows="5" class="champ" placeholder="Décrivez votre besoin..." required></textarea>
+
+              <!-- Case à cocher -->
+              <div class="choix">
+                <input type="checkbox" id="copie" name="copie" value="oui">
+                <label for="copie">Recevoir une copie de mon message</label>
+              </div>
+            </fieldset>
+
+            <!-- Boutons du formulaire -->
+            <div class="formulaire-actions">
+              <!-- submit : envoie le formulaire -->
+              <button type="submit" class="bouton bouton-plein">Envoyer</button>
+              <!-- reset : efface tous les champs -->
+              <button type="reset" class="bouton bouton-gris">Effacer</button>
+            </div>
+
+          </form>
+
+          <!-- Coordonnées directes : <address> est la balise sémantique pour les contacts -->
+          <aside class="carte carte-contact">
+            <h3 class="carte-titre">Contact direct</h3>
+            <address class="adresse">
+              <!-- mailto: ouvre la messagerie -->
+              <p><span class="adresse-label">E-mail</span><br>
+                <a href="mailto:yanan3504toure@gmail.com">yanan3504toure@gmail.com</a></p>
+              <!-- tel: lance un appel sur mobile -->
+              <p><span class="adresse-label">Téléphone / WhatsApp</span><br>
+                <a href="tel:+2250747247147">07 47 24 71 47</a></p>
+              <p><span class="adresse-label">Localisation</span><br>
+                Abidjan, Côte d'Ivoire</p>
             </address>
+          </aside>
 
-            <p><a href="#accueil">↑ Retour en haut</a></p>
-        </section>
+        </div>
+      </div>
+    </section>
 
-    </main>
+  </main>
 
-    <hr>
+  <!-- ===================================================== -->
+  <!-- PIED DE PAGE (balise sémantique <footer>)              -->
+  <!-- ===================================================== -->
+  <footer class="pied">
+    <div class="conteneur">
 
-    <!-- ===================================================== -->
-    <!-- PIED DE PAGE (balise sémantique <footer>)              -->
-    <!-- ===================================================== -->
-    <footer>
+      <!-- Rappel de la navigation, affiché en ligne -->
+      <ul class="pied-menu">
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- target="_blank" : nouvel onglet ; rel="noopener noreferrer" : ouverture sécurisée -->
+        <li><a href="https://github.com/Yanan2022" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
 
-        <!-- Liens externes : target="_blank" ouvre un nouvel onglet,  -->
-        <!-- rel="noopener noreferrer" sécurise cette ouverture        -->
-        <p>
-            Retrouvez-moi sur
-            <a href="https://github.com/Yanan2022" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
+      <!-- <small> : texte secondaire ; &copy; affiche le symbole © -->
+      <p class="pied-copyright"><small>&copy; 2026 Yanan Touré. Tous droits réservés. Réalisé en HTML &amp; CSS pour le checkpoint GOMYCODE.</small></p>
 
-        <!-- Rappel de la navigation dans le pied de page -->
-        <p>
-            <a href="#a-propos">À propos</a> |
-            <a href="#experience">Expérience</a> |
-            <a href="#cv">CV</a> |
-            <a href="#contact">Contact</a>
-        </p>
+      <!-- Lien pour remonter en haut -->
+      <a href="#accueil" class="retour-haut" aria-label="Retour en haut">↑</a>
 
-        <!-- <small> : texte secondaire (mentions, copyright) ; &copy; affiche le symbole © -->
-        <p><small>&copy; 2026 Yanan Touré. Tous droits réservés. Page réalisée en HTML pour le checkpoint
-                GOMYCODE.</small></p>
-
-    </footer>
+    </div>
+  </footer>
 
 </body>
-
 </html>
