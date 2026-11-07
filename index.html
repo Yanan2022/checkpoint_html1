@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- Déclaration du type de document : HTML5 -->
+<html lang="fr">
+<!-- Attribut lang="fr" : indique au navigateur et aux lecteurs d'écran que la page est en français -->
+
+<head>
+    <!-- Encodage des caractères : permet d'afficher correctement les accents (é, è, à, ç...) -->
+    <meta charset="UTF-8">
+    <!-- Adapte l'affichage à la largeur de l'écran (mobile, tablette, ordinateur) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Description de la page, utilisée par les moteurs de recherche -->
+    <meta name="description" content="Portfolio de Yanan Touré, développeur Full Stack et formateur à Abidjan.">
+    <!-- Nom de l'auteur de la page -->
+    <meta name="author" content="Yanan Touré">
+    <!-- Titre affiché dans l'onglet du navigateur -->
+    <title>Yanan Touré | Portfolio</title>
+</head>
+
+<body>
+
+    <!-- ===================================================== -->
+    <!-- EN-TÊTE DE LA PAGE (balise sémantique <header>)        -->
+    <!-- Contient l'identité du site et la barre de navigation  -->
+    <!-- ===================================================== -->
+    <header id="accueil">
+
+        <!-- Logo / avatar : image locale au format SVG -->
+        <img src="images/avatar.svg" alt="Avatar aux initiales YT de Yanan Touré" width="100" height="100">
+
+        <!-- Titre principal de la page : un seul <h1> par page -->
+        <h1>Yanan Touré</h1>
+
+        <!-- Sous-titre : le métier -->
+        <p><strong>Développeur Full Stack</strong> &amp; <em>Formateur</em>, basé à Abidjan, Côte d'Ivoire</p>
+
+        <!-- ================================================= -->
+        <!-- BARRE DE NAVIGATION (balise sémantique <nav>)      -->
+        <!-- Liste non ordonnée de liens locaux (ancres #id)    -->
+        <!-- Chaque lien mène à la section ayant le même id     -->
+        <!-- ================================================= -->
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#experience">Expérience professionnelle</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Ligne horizontale de séparation visuelle -->
+    <hr>
+
+    <!-- ===================================================== -->
+    <!-- CONTENU PRINCIPAL (balise sémantique <main>)           -->
+    <!-- Une seule balise <main> par page                       -->
+    <!-- ===================================================== -->
+    <main>
+
+        <!-- ================================================= -->
+        <!-- SECTION 1 : À PROPOS                               -->
+        <!-- ================================================= -->
+        <section id="a-propos">
+
+            <!-- Titre de la section -->
+            <h2>À propos</h2>
+
+            <!-- Paragraphes de présentation -->
+            <p>
+                Je suis <strong>ingénieur en génie logiciel</strong>, titulaire d'un
+                <abbr title="Master en Systèmes d'Information et Génie Logiciel">Master SIGL</abbr>
+                obtenu à l'<abbr
+                    title="École Supérieure Africaine des Technologies de l'Information et de la Communication">ESATIC</abbr>.
+            </p>
+            <p>
+                Je conçois des applications web et mobiles complètes, du back-end au front-end,
+                et je partage mes connaissances en tant que formateur. J'aime créer des solutions
+                utiles pour le marché ivoirien : mobilité, livraison et assurance.
+            </p>
+
+            <!-- ============================================== -->
+            <!-- VIDÉO DE PRÉSENTATION                           -->
+            <!-- <figure> regroupe un média et sa légende        -->
+            <!-- ============================================== -->
+            <figure>
+                <!-- Balise <video> :                                          -->
+                <!--  - controls : affiche les boutons lecture/pause/volume      -->
+                <!--  - poster   : image affichée avant le lancement de la vidéo -->
+                <!--  - width    : largeur d'affichage en pixels                 -->
+                <!--  - muted    : vidéo sans son                                -->
+                <video controls muted width="480" poster="media/poster.jpg">
+                    <!-- Fichier vidéo local, au format MP4 -->
+                    <source src="media/presentation.mp4" type="video/mp4">
+                    <!-- Texte affiché si le navigateur ne lit pas la vidéo -->
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
+                <!-- Légende de la vidéo -->
+                <figcaption>Vidéo de présentation (8 secondes)</figcaption>
+            </figure>
+
+            <!-- ============================================== -->
+            <!-- CE QUE JE FAIS : liste non ordonnée <ul>        -->
+            <!-- ============================================== -->
+            <h3>Ce que je fais</h3>
+            <ul>
+                <li>Développement d'applications web (front-end et back-end)</li>
+                <li>Développement d'applications mobiles</li>
+                <li>Intégration de l'intelligence artificielle (IA générative, RAG)</li>
+                <li>Gestion d'incidents sur des systèmes d'information</li>
+                <li>Formation en développement web, Python, data science et IA</li>
+            </ul>
+
+            <!-- Lien local pour remonter en haut de la page -->
+            <p><a href="#accueil">↑ Retour en haut</a></p>
+        </section>
+
+        <hr>
+
+        <!-- ================================================= -->
+        <!-- SECTION 2 : EXPÉRIENCE PROFESSIONNELLE             -->
+        <!-- Chaque expérience est un <article> indépendant     -->
+        <!-- ================================================= -->
+        <section id="experience">
+
+            <h2>Expérience professionnelle</h2>
+
+            <!-- ---------- Expérience 1 ---------- -->
+            <article>
+                <h3>Développeur Full Stack | REVIVA TECHNOLOGIES</h3>
+                <!-- <time> : balise sémantique pour les dates (attribut datetime lisible par les machines) -->
+                <p><time datetime="2025-10">Octobre 2025</time> à aujourd'hui · Abidjan</p>
+                <!-- Liste des missions -->
+                <ul>
+                    <li>Mission chez <strong>GS2E</strong> : gestion des incidents des systèmes d'information de la CIE
+                        et de la SODECI</li>
+                    <li>Support et analyse dans l'environnement <strong>SAP / Saphir V3</strong></li>
+                    <li>Participation à l'initiative <em>GenAI Factory</em></li>
+                </ul>
+            </article>
+
+            <!-- ---------- Expérience 2 ---------- -->
+            <article>
+                <h3>Formateur (temps partiel) | GOMYCODE Abidjan</h3>
+                <p>En cours · Abidjan</p>
+                <!-- Liste ordonnée <ol> : les modules enseignés -->
+                <ol>
+                    <li>Développement web</li>
+                    <li>Python</li>
+                    <li>Data science</li>
+                    <li>IA générative</li>
+                    <li>Cybersécurité</li>
+                    <li>Deep learning / NLP</li>
+                </ol>
+            </article>
+
+            <!-- ---------- Expérience 3 ---------- -->
+            <article>
+                <h3>Entrepreneur | Projets personnels</h3>
+                <p>Applications pour le marché ivoirien</p>
+
+                <!-- <details> / <summary> : bloc que l'on peut ouvrir et fermer, sans JavaScript -->
+                <details>
+                    <summary>Voir mes projets</summary>
+                    <!-- Liste de description <dl> : terme <dt> + description <dd> -->
+                    <dl>
+                        <dt>TIGOON CONNECT</dt>
+                        <dd>Plateforme de livraison et de VTC, avec un module de livraison à moto.</dd>
+
+                        <dt>IRO</dt>
+                        <dd>Application mobile de location de véhicules à Abidjan.</dd>
+
+                        <dt>Cap Assurance</dt>
+                        <dd>Plateforme de gestion et chatbot pour l'assurance.</dd>
+                    </dl>
+                </details>
+            </article>
+
+            <p><a href="#accueil">↑ Retour en haut</a></p>
+        </section>
+
+        <hr>
+
+        <!-- ================================================= -->
+        <!-- SECTION 3 : CV                                     -->
+        <!-- Utilisation de tableaux <table> et de listes       -->
+        <!-- ================================================= -->
+        <section id="cv">
+
+            <h2>CV</h2>
+
+            <!-- ============================================== -->
+            <!-- TABLEAU 1 : FORMATION                           -->
+            <!-- ============================================== -->
+            <!-- border="1" : affiche les bordures du tableau (attribut HTML simple) -->
+            <table border="1">
+                <!-- <caption> : titre du tableau -->
+                <caption>Formation</caption>
+                <!-- <thead> : ligne d'en-tête -->
+                <thead>
+                    <tr>
+                        <!-- <th> : cellule d'en-tête ; scope="col" indique qu'elle décrit une colonne -->
+                        <th scope="col">Diplôme</th>
+                        <th scope="col">Établissement</th>
+                        <th scope="col">Spécialité</th>
+                    </tr>
+                </thead>
+                <!-- <tbody> : corps du tableau, avec les données -->
+                <tbody>
+                    <tr>
+                        <td>Master</td>
+                        <td>ESATIC</td>
+                        <td>Systèmes d'Information et Génie Logiciel</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+
+            <!-- ============================================== -->
+            <!-- TABLEAU 2 : COMPÉTENCES TECHNIQUES               -->
+            <!-- ============================================== -->
+            <table border="1">
+                <caption>Compétences techniques</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Domaine</th>
+                        <th scope="col">Technologies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- scope="row" : cette cellule d'en-tête décrit la ligne -->
+                        <th scope="row">Front-end</th>
+                        <td>HTML, CSS, JavaScript, React</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Back-end</th>
+                        <td>Node.js, Python, FastAPI</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Intelligence artificielle</th>
+                        <td>IA générative, RAG, Ollama, NLP</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Outils</th>
+                        <td>Git, GitHub, VS Code, SAP</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ============================================== -->
+            <!-- LANGUES : liste non ordonnée                    -->
+            <!-- ============================================== -->
+            <h3>Langues</h3>
+            <ul>
+                <li>Français : langue principale</li>
+                <li>Anglais : technique</li>
+            </ul>
+
+            <p><a href="#accueil">↑ Retour en haut</a></p>
+        </section>
+
+        <hr>
+
+        <!-- ================================================= -->
+        <!-- SECTION 4 : CONTACT (formulaire HTML)              -->
+        <!-- ================================================= -->
+        <section id="contact">
+
+            <h2>Contact</h2>
+            <p>Un projet, une formation ou une question ? Écrivez-moi grâce au formulaire ci-dessous.</p>
+
+            <!-- Balise <form> :                                                        -->
+            <!--  - action : adresse où les données seraient envoyées (# = cette page)    -->
+            <!--  - method="post" : les données ne s'affichent pas dans l'URL             -->
+            <form action="#" method="post">
+
+                <!-- <fieldset> regroupe des champs liés ; <legend> donne le titre du groupe -->
+                <fieldset>
+                    <legend>Vos coordonnées</legend>
+
+                    <!-- Le "for" du label correspond à l'"id" du champ : cliquer sur le texte active le champ -->
+                    <p>
+                        <label for="nom">Nom complet :</label><br>
+                        <!-- required : champ obligatoire -->
+                        <input type="text" id="nom" name="nom" placeholder="Ex. : Awa Koné" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Adresse e-mail :</label><br>
+                        <!-- type="email" : le navigateur vérifie le format de l'adresse -->
+                        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+                    </p>
+
+                    <p>
+                        <label for="telephone">Téléphone (facultatif) :</label><br>
+                        <!-- type="tel" : affiche le clavier numérique sur mobile -->
+                        <input type="tel" id="telephone" name="telephone" placeholder="07 00 00 00 00">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Votre demande</legend>
+
+                    <!-- Boutons radio : un seul choix possible car ils partagent le même "name" -->
+                    <p>Type de demande :</p>
+                    <p>
+                        <input type="radio" id="projet" name="type" value="projet" checked>
+                        <label for="projet">Projet de développement</label><br>
+
+                        <input type="radio" id="formation" name="type" value="formation">
+                        <label for="formation">Formation</label><br>
+
+                        <input type="radio" id="autre" name="type" value="autre">
+                        <label for="autre">Autre</label>
+                    </p>
+
+                    <!-- Liste déroulante <select> avec ses options -->
+                    <p>
+                        <label for="budget">Budget estimé :</label><br>
+                        <select id="budget" name="budget">
+                            <option value="">-- Choisir --</option>
+                            <option value="petit">Moins de 500 000 FCFA</option>
+                            <option value="moyen">500 000 à 2 000 000 FCFA</option>
+                            <option value="grand">Plus de 2 000 000 FCFA</option>
+                        </select>
+                    </p>
+
+                    <!-- Champ de date -->
+                    <p>
+                        <label for="date">Date de début souhaitée :</label><br>
+                        <input type="date" id="date" name="date">
+                    </p>
+
+                    <!-- Zone de texte sur plusieurs lignes -->
+                    <p>
+                        <label for="message">Message :</label><br>
+                        <textarea id="message" name="message" rows="6" cols="40" placeholder="Décrivez votre besoin..."
+                            required></textarea>
+                    </p>
+
+                    <!-- Case à cocher -->
+                    <p>
+                        <input type="checkbox" id="copie" name="copie" value="oui">
+                        <label for="copie">Recevoir une copie de mon message</label>
+                    </p>
+                </fieldset>
+
+                <!-- Boutons du formulaire -->
+                <p>
+                    <!-- submit : envoie le formulaire -->
+                    <button type="submit">Envoyer</button>
+                    <!-- reset : efface tous les champs -->
+                    <button type="reset">Effacer</button>
+                </p>
+
+            </form>
+
+            <!-- ============================================== -->
+            <!-- COORDONNÉES DIRECTES                            -->
+            <!-- <address> : balise sémantique pour les contacts -->
+            <!-- ============================================== -->
+            <h3>Ou contactez-moi directement</h3>
+            <address>
+                <!-- mailto: ouvre la messagerie de l'utilisateur -->
+                E-mail : <a href="mailto:yanan3504toure@gmail.com">yanan3504toure@gmail.com</a><br>
+                <!-- tel: lance un appel sur mobile -->
+                Téléphone / WhatsApp : <a href="tel:+2250747247147">07 47 24 71 47</a><br>
+                Abidjan, Côte d'Ivoire
+            </address>
+
+            <p><a href="#accueil">↑ Retour en haut</a></p>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ===================================================== -->
+    <!-- PIED DE PAGE (balise sémantique <footer>)              -->
+    <!-- ===================================================== -->
+    <footer>
+
+        <!-- Liens externes : target="_blank" ouvre un nouvel onglet,  -->
+        <!-- rel="noopener noreferrer" sécurise cette ouverture        -->
+        <p>
+            Retrouvez-moi sur
+            <a href="https://github.com/Yanan2022" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+
+        <!-- Rappel de la navigation dans le pied de page -->
+        <p>
+            <a href="#a-propos">À propos</a> |
+            <a href="#experience">Expérience</a> |
+            <a href="#cv">CV</a> |
+            <a href="#contact">Contact</a>
+        </p>
+
+        <!-- <small> : texte secondaire (mentions, copyright) ; &copy; affiche le symbole © -->
+        <p><small>&copy; 2026 Yanan Touré. Tous droits réservés. Page réalisée en HTML pour le checkpoint
+                GOMYCODE.</small></p>
+
+    </footer>
+
+</body>
+
+</html>
